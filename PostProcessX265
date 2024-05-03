@@ -1,4 +1,6 @@
 # Script to convert the largest video file in a directory to MKV format using HandBrakeCLI
+# PathtoOutputDirectory - Change this varible w/ (CTRL+H or the Find and Replace function) to set the outout directory.
+
 
 # Define the parameter for the source directory
 param (
@@ -40,7 +42,7 @@ if (-not $largestVideoFile) {
 }
 
 # Specify the output directory for the converted files
-$outputDir = "G:\Downloads\TV"
+$outputDir = "PathtoOutputDirectory"
 
 # Construct the output file path for the converted video
 $outputFileName = $largestVideoFile | Split-Path -Leaf
