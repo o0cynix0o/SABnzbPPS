@@ -56,3 +56,6 @@ Start-Process -FilePath "HandBrakeCLI" -ArgumentList "-i `"$largestVideoFile`" -
 
 # Display a message indicating the completion of the conversion process
 Write-Host "Conversion complete."
+
+# Close the PowerShell window
+exit
