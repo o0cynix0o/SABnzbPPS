@@ -1,4 +1,4 @@
-During a mundane commute, a curious thought struck my mind: could ChatGPT lend its prowess to craft a script tailored for the postprocessing of downloads via SABNZB? Specifically, the aim was to encode them to the efficient x265 format, excise certain tracks and subtitles, and further compress the files. However, to embark on this endeavor, several prerequisites must be fulfilled:
+During a mundane commute to work, a curious thought struck my mind: could ChatGPT lend its prowess to craft a script tailored for the postprocessing of downloads via SABNZB? Specifically, the aim was to encode them to the efficient x265 format, excise certain tracks and subtitles, and further compress the files. However, to embark on this endeavor, several prerequisites must be fulfilled:
 
 1. **Handbrake for Windows**: This indispensable tool facilitates the transcoding process.
 2. **HandbrakeCLI for Windows**: The Command Line Interface (CLI) variant of Handbrake, essential for script automation.
