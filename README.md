@@ -1,8 +1,4 @@
-This project came out of a random thought on the way to work one day. "Can I use ChatGPT to write a script for postprocessing my downloads with SABNZB to encode them to x265 and strip out certain tracks and subtitles and also compress the files as well?"
-you need a few things installed in order for this to wiork.
-Handbreak for Windows
-HandbreakCLI for Windows
-And FFPROBE also in the handbreak dir==During a mundane commute, a curious thought struck my mind: could ChatGPT lend its prowess to craft a script tailored for the postprocessing of downloads via SABNZB? Specifically, the aim was to encode them to the efficient x265 format, excise certain tracks and subtitles, and further compress the files. However, to embark on this endeavor, several prerequisites must be fulfilled:
+During a mundane commute, a curious thought struck my mind: could ChatGPT lend its prowess to craft a script tailored for the postprocessing of downloads via SABNZB? Specifically, the aim was to encode them to the efficient x265 format, excise certain tracks and subtitles, and further compress the files. However, to embark on this endeavor, several prerequisites must be fulfilled:
 
 1. **Handbrake for Windows**: This indispensable tool facilitates the transcoding process.
 2. **HandbrakeCLI for Windows**: The Command Line Interface (CLI) variant of Handbrake, essential for script automation.
