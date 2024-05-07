@@ -1,6 +1,6 @@
 # Script to convert the largest video file in a directory to MKV format using HandBrakeCLI
 # PathtoOutputDirectory - Change this varible w/ (CTRL+H or the Find and Replace function) to set the outout directory.
-
+# HandBrakeCLI - Change this variable to reflect the path to the HandBrakeCLI.exe on your system, or leave as is if you have added the path to your .exe to the PATH Systen Variable.
 
 # Define the parameter for the source directory
 [CmdletBinding()]
