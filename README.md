@@ -11,14 +11,14 @@ During a mundane commute to work, a curious thought struck my mind: could ChatGP
 ### Dependencies
 
 1. *HandBreak for Windows* - Download and install from main site. (https://handbrake.fr/downloads.php)
-2. *HandbrakeCLI* - Download and extract .exe to your HandBreak install directory. (https://handbrake.fr/downloads2.php)
-3. *FFPROBE* - Download and extract .exe to your HandBreak install directory. (https://ffmpeg.org/download.html)
+2. *HandbrakeCLI* - Download and extract .exe to your HandBreak directory. (https://handbrake.fr/downloads2.php)
+3. *FFPROBE* - Download and extract .exe to your HandBreak directory. (https://ffmpeg.org/download.html)
 
 ### Installing
 
-* You should know how to search out, download and install the HandBreak Links have been provided. Remember where you are going to install HandBreak, and the other two EXE's. Put these all in the same folder (C:\Program  Files\HandBrake). You are going to need this path for the "PathtoOutputDirectory" variable inside of the script. Or you can add this path to the Windows System Variable "PATH" and you won't need this at all.
-* You also need an output directory. This is set inside the script using the "HandBrakeCLI" variable isside the script. This is manditory the script will not work without it.
-* You will also need the path to the PostProcessX265.ps1 script downloaded as part of this project.
+* Download and install from the HandBreak Links that have been provided. Remember where you are install HandBreak, and the other two EXE's. Put these all in the same folder (C:\Program  Files\HandBrake). You are going to need this path for the "HandBrakeCLI" variable inside of the script. Or you can add this path to the Windows System Variable "PATH" and you won't need this at all.
+* You also need an output directory. This is set inside the script using the "PathtoOutputDirectory" variable inside the "PostProcessX265" script. This is manditory, the script will not work without it.
+* You will also need the path to the PostProcessX265.ps1 script downloaded as part of this project. This path get added to the workflow by using the "EncodingPSScriptPath" variable inside of the "PSTrigger" batch file. 
 
 ### Executing program
 
@@ -34,8 +34,8 @@ During a mundane commute to work, a curious thought struck my mind: could ChatGP
 
 Contributors names and contact info
 
-ex. o0cYN1X0o 
-ex. 
+o0cYN1X0o Padawan
+GoyerGeek 
 
 ## Version History
 
