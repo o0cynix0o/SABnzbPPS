@@ -32,7 +32,7 @@ During a mundane commute to work, a curious thought struck my mind: could ChatGP
 
 ## Authors
 
-* o0cYN1X0o Padawan
+* o0cYN1X0o - Padawan
 * GoyerGeek - Jedi Master
 * ChatGPT - Confused, "Go home you're drunk."
 
@@ -46,4 +46,4 @@ This project is licensed under GNU General Public License v3.0 - see the LICENSE
 
 ## Acknowledgments
 
-Thanks for one of those random shower thoughts that hopefuly turns out better then entended.
+Terry Hoitz - "Fly peacock, fly!"
