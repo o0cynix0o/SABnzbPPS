@@ -32,9 +32,9 @@ During a mundane commute to work, a curious thought struck my mind: could ChatGP
 
 ## Authors
 
-o0cYN1X0o Padawan
-GoyerGeek - Jedi Master
-ChatGPT - Confused Drunk
+* o0cYN1X0o Padawan
+* GoyerGeek - Jedi Master
+* ChatGPT - Confused, "Go home you're drunk."
 
 ## Version History
 
@@ -42,13 +42,8 @@ ChatGPT - Confused Drunk
 
 ## License
 
-This project is licensed under the I havent decided yet. License - see the LICENSE.md file for details
+This project is licensed under GNU General Public License v3.0 - see the LICENSE.md file for details
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+Thanks for one of those random shower thoughts that hopefuly turns out better then entended.
