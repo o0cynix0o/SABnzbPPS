@@ -1,14 +1,16 @@
-During a mundane commute to work, a curious thought struck my mind: could ChatGPT lend its prowess to craft a script tailored for the postprocessing of downloads via SABNZB? Specifically, the aim was to encode them to the efficient x265 format, excise certain tracks and subtitles, and further compress the files. However, to embark on this endeavor, several prerequisites must be fulfilled:
+#SABnzb PostProcessing Script for Handbrake Reencodes to x265
+
+###During a mundane commute to work, a curious thought struck my mind: could ChatGPT lend its prowess to craft a script tailored for the postprocessing of downloads via SABNZB? Specifically, the aim was to encode them to the efficient x265 format, excise certain tracks and subtitles, and further compress the files. However, to embark on this endeavor, several prerequisites must be fulfilled:
 
 1. **Handbrake for Windows**: This indispensable tool facilitates the transcoding process.
 2. **HandbrakeCLI for Windows**: The Command Line Interface (CLI) variant of Handbrake, essential for script automation.
 3. **FFPROBE**: A critical component, residing within the Handbrake installation directory, indispensable for probing multimedia files.
 
-Before diving into the script, it's imperative to ensure Handbrake is installed correctly, and HandbrakeCLI is downloaded and extracted to the Handbrake installation directory. To streamline command execution, consider appending this directory to the PATH Environment Variable in Windows.
+###Before diving into the script, it's imperative to ensure Handbrake is installed correctly, and HandbrakeCLI is downloaded and extracted to the Handbrake installation directory. To streamline command execution, consider appending this directory to the PATH Environment Variable in Windows.
 
-With these prerequisites in place, the script can seamlessly orchestrate the postprocessing workflow, transforming downloads into optimized x265-encoded files, selectively stripping undesired tracks and subtitles, and applying compression for efficient storage and distribution.
+###With these prerequisites in place, the script can seamlessly orchestrate the postprocessing workflow, transforming downloads into optimized x265-encoded files, selectively stripping undesired tracks and subtitles, and applying compression for efficient storage and distribution.
 you need to install handbreak and download and extract HandbreakCLI to the Handbreak install DIR. You need to either add this path to the PATH Environment Varible in Windows, so the cammands will run as expected.
 
-In addition to the aforementioned requirements, another crucial component must be integrated into the workflow: the PSTrigger.bat Windows batch Script. This inclusion is necessitated by the inherent constraint of SABnzbd, which lacks native support for executing PowerShell commands directly. To circumvent this limitation, the workflow incorporates the PSTrigger.bat script, meticulously crafted to interface with SABnzbd seamlessly.
+###In addition to the aforementioned requirements, another crucial component must be integrated into the workflow: the PSTrigger.bat Windows batch Script. This inclusion is necessitated by the inherent constraint of SABnzbd, which lacks native support for executing PowerShell commands directly. To circumvent this limitation, the workflow incorporates the PSTrigger.bat script, meticulously crafted to interface with SABnzbd seamlessly.
 
-In the intricate tapestry of this automated process, these scripts serve as the backbone, meticulously orchestrated to execute at predefined stages, leveraging the categorical settings within SABnzbd. Through this meticulously designed framework, the efficiency and efficacy of the postprocessing workflow are elevated, ensuring a seamless transition from download completion to the meticulous encoding, track and subtitle curation, and compression phases.
+###In the intricate tapestry of this automated process, these scripts serve as the backbone, meticulously orchestrated to execute at predefined stages, leveraging the categorical settings within SABnzbd. Through this meticulously designed framework, the efficiency and efficacy of the postprocessing workflow are elevated, ensuring a seamless transition from download completion to the meticulous encoding, track and subtitle curation, and compression phases.
