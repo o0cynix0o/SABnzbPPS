@@ -32,10 +32,9 @@ During a mundane commute to work, a curious thought struck my mind: could ChatGP
 
 ## Authors
 
-Contributors names and contact info
-
 o0cYN1X0o Padawan
-GoyerGeek 
+GoyerGeek - Jedi Master
+ChatGPT - Confused Drunk
 
 ## Version History
 
@@ -43,7 +42,7 @@ GoyerGeek
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the I havent decided yet. License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
