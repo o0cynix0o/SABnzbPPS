@@ -4,7 +4,7 @@ A PostProcessing Script written in Powershell to use Handbreak to ReEncode video
 
 ## Description
 
-During a mundane commute to work, a curious thought struck my mind: could ChatGPT lend its prowess to craft a script tailored for the postprocessing of downloads via SABNZB? Specifically, the aim was to encode them to the efficient x265 format, excise certain tracks and subtitles, and further compress the files. Which then turned into a learning project, when it comes down to it; I'd realyy like to know how its doing what its doing.
+During a mundane commute to work, an intriguing notion dawned on me: could ChatGPT wield its prowess to craft a script tailored for the post-processing of downloads via SABNZB? Specifically, the aim was to encode them into the efficient x265 format, excise certain tracks and subtitles, and further compress the files. This sparked a determined curiosity within me, driving a quest to understand the mechanics behind this endeavor and delve into its inner workings.
 
 ## Getting Started
 
