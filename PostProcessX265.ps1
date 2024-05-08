@@ -1,7 +1,7 @@
-# Script variables for system customization.
-# PathtoOutputDirectory - Change this varible to set the output directory.
-# HandBrakeCLI - Change this variable to reflect the path to the HandBrakeCLI.exe on your system, or leave as is if you have added that path to the PATH Systen Variable.
-
+<# Script variables for system customization.
+PathtoOutputDirectory - Change this varible to set the output directory.
+HandBrakeCLI - Change this variable to reflect the path to the HandBrakeCLI.exe on your system, or leave as is if you have added that path to the PATH Systen Variable.
+#>
 
 # Define the parameter for the source directory
 [CmdletBinding()]
