@@ -62,7 +62,7 @@ With these steps, your scripts will be properly connected to Sonarr, Radarr, all
    - Go to **Tools > Options > Downloads**.
    - Under **Categories**, add categories **Movies** and **TVShows**. **These precise category names need to be used** as that's what the script is expecting.
 
-2. Once set up, qBittorrent will call **Torrents.bat** with the appropriate category when the download completes, passing the category and file path to the corresponding script. **Torrents.bat** will create a file called **FilesToBeReencoded.txt** in the **TXT** folder and then trigger **Torrents.py** to process the file.
+2. Once set up, qBittorrent will pass the file path and category to **Torrents.bat**. The batch will create a file called **FilesToBeReencoded.txt** in the **TXT** folder and then trigger **Torrents.py** to process the file.
 
 #### **SABnzbd**:
 
