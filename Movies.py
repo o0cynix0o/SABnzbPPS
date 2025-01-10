@@ -52,7 +52,7 @@ def process_media_info(file_path, codec, width, script_directory):
 
     # Radarr API interaction
     radarr_api_key = "your_radarr_api_key_here"  # Replace with your actual Radarr API key
-    radarr_url = "http://localhost:55004/api/v3/command"
+    radarr_url = "http://localhost:port###/api/v3/command"
     json_payload = {"name": "DownloadedMoviesScan", "path": output_file_path}
 
     try:
