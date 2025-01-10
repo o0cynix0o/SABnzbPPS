@@ -20,21 +20,6 @@ During a mundane commute to work, an intriguing notion dawned on me: could ChatG
 4. The **Presets** folder inside the project includes the required HandBrake presets for processing video files. You can modify these presets if needed by importing them into HandBrake's GUI application.
 5. The **ReEncodedFiles** directory is included in the zip and is set as the default output directory for processed files. This output directory will be used automatically for storing reencoded media files.
 
-### Execution
-
-* **qBittorrent**:
-   1. Set up the **Torrents.bat** file to run after downloading a torrent by configuring the **Run External Program** setting under **Tools > Options > Downloads**.
-   2. In the **Run external program** field, set the path to **Torrents.bat** and pass the following parameters:
-      ```plaintext
-      "C:\path\to\project\Torrents.bat" "%F" "%L"
-      ```
-      Where `%F` is the file path and `%L` is the category of the torrent (e.g., "Movies" or "TVShow").
-   3. The script will automatically detect the category (Movies or TV Shows) and call the appropriate batch file to process the video.
-
-* **SABnzbd**:
-   1. Add the **Movies.bat** or **TVShow.bat** script as post-processing triggers in your SABnzbd categories.
-   2. When a file is downloaded, it will trigger the appropriate batch file, reencode the file, and organize it into the designated output directory (**ReEncodedFiles**).
-
 ### Creating Categories for Downloaders
 
 #### **qBittorrent**:
@@ -65,9 +50,24 @@ During a mundane commute to work, an intriguing notion dawned on me: could ChatG
 4. When SABnzbd completes a download, it will automatically run the relevant `.bat` file, which triggers the Python scripts to process the downloaded file.
    - Ensure that the **Movies.bat** and **TVShows.bat** files are correctly pointing to the scripts to process the respective files.
 
+### Execution
+
+* **qBittorrent**:
+   1. Set up the **Torrents.bat** file to run after downloading a torrent by configuring the **Run External Program** setting under **Tools > Options > Downloads**.
+   2. In the **Run external program** field, set the path to **Torrents.bat** and pass the following parameters:
+      ```plaintext
+      "C:\path\to\project\Torrents.bat" "%F" "%L"
+      ```
+      Where `%F` is the file path and `%L` is the category of the torrent (e.g., "Movies" or "TVShow").
+   3. The script will automatically detect the category (Movies or TV Shows) and call the appropriate batch file to process the video.
+
+* **SABnzbd**:
+   1. Add the **Movies.bat** or **TVShow.bat** script as post-processing triggers in your SABnzbd categories.
+   2. When a file is downloaded, it will trigger the appropriate batch file, reencode the file, and organize it into the designated output directory (**ReEncodedFiles**).
+
 ### Folder Structure
 
-The folder structure is maintained automatically when you download the project as a ZIP from GitHub. Here's what it will look like after extraction:
+The folder structure is maintained automatically when you download the project as a ZIP from GitHub. Here's what it will look like after extraction (Not including the .exe files):
 
 ```
 Project Directory (SABnzbPPS)
@@ -91,4 +91,4 @@ Project Directory (SABnzbPPS)
 └── Torrents.py                 (Main Python Torrent processing script)
 ```
 
-Simply extract the project ZIP, download the required executables, and place them in the **App** folder. No additional setup is required for the folder structure. The output directory for reencoded files will automatically be set to **ReEncodedFiles**. To reencode a single file, simply drag and drop the file onto the corresponding `.bat` file.
+Simply extract the project ZIP, download the required executables, and place them in the **App** folder. No additional setup is required for the folder structure. To reencode a single file, simply drag and drop the file onto the corresponding `.bat` file.
