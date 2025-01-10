@@ -1,10 +1,10 @@
-# SABnzb PostProcessing Script for Handbrake Reencodes to x265
+# PostProcessing Script for Handbrake Reencodes to x265
 
 A PostProcessing Script written in Python to use HandBrake to reencode videos into x265 format.
 
 ## Description
 
-During a mundane commute to work, an intriguing notion dawned on me: could ChatGPT wield its prowess to craft a script tailored for the post-processing of downloads via SABNZB? Specifically, the aim was to encode them into the efficient x265 format, excise certain tracks and subtitles, and further compress the files. This sparked a determined curiosity within me, driving a quest to understand the mechanics behind this endeavor and delve into its inner workings.
+The aim is to reencode your media into the efficient x265 format, excise certain audio tracks and subtitles, and further save space. This sparked a determined curiosity within me, driving a quest to understand the mechanics behind this endeavor and delve into its inner workings. These scripts are the result of months of work and testing. I hope they help. If you have any sugestions please feel free to let me know.
 
 ## Getting Started
 
