@@ -143,6 +143,3 @@ Project Directory (SABnzbPPS)
 └── Movies.py                   (Main Python Movie processing script)
 └── Torrents.py                 (Main Python Torrent processing script)
 ```
-
-This structure allows for efficient sorting, encoding, and organizing of downloaded content.
-```
