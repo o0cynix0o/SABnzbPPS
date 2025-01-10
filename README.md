@@ -93,4 +93,29 @@ Project Directory (SABnzbPPS)
 └── Torrents.py                 (Main Python Torrent processing script)
 ```
 
+
+## Notes
+
 Simply extract the project ZIP, download the required executables, and place them in the **App** folder. No additional setup is required for the folder structure. To reencode a single file, simply drag and drop the file onto the corresponding `.bat` file.
+
+## Help
+
+Google is your friend.
+
+## Authors
+
+* o0cYN1X0o - Padawan
+* GoyerGeek - Jedi Master
+* ChatGPT - Confused, "Go home you're drunk."
+
+## Version History
+
+Nothin' to see here...move along....
+
+## License
+
+This project is licensed under GNU General Public License v3.0 - see the LICENSE.md file for details
+
+## Acknowledgments
+
+*Terry Hoitz - "Fly peacock, fly!"
