@@ -29,7 +29,7 @@ The aim is to reencode your media into the efficient x265 format, excise certain
 
 ### Setting up scripts for action
 
-The scripts require API keys to interact with their respective services Sonarr, Radarr, torrent client of choice. Here’s how you can find and set the API keys in the corresponding Python scripts:
+The scripts require API keys to interact with their respective services Sonarr for TVShows, Radarr for Movies. Here’s how you can find and set the API keys in the corresponding Python scripts:
 
 1. **Find Your API Key**:
    - **Sonarr**:
