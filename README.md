@@ -58,17 +58,18 @@ With these steps, your scripts will be properly connected to Sonarr, Radarr, all
 
 #### **qBittorrent**:
 
-1. **Create categories to match the scripts by doing the following**:
+1. Create categories to match the scripts by doing the following**:
    - Go to **Tools > Options > Downloads**.
    - Under **Categories**, add categories **Movies** and **TVShows**. **These precise category names need to be used** as that's what the script is expecting.
-2. **Set up the **Torrents.bat** file to run after downloading a torrent by configuring the **Run External Program** setting under **Tools > Options > Downloads**.
+2. Set up the **Torrents.bat** file to run after downloading a torrent by configuring the **Run External Program** setting under **Tools > Options > Downloads**.
    - In the **Run external program** field, set the path to **Torrents.bat** and pass the following parameters:
       ```plaintext
       "C:\path\to\project\Torrents.bat" "%F" "%L"
       ```
       Where `%F` is the file path and `%L` is the category of the torrent (e.g., "Movies" or "TVShow").
-     
-3. Once set up, qBittorrent will pass the file path and category to **Torrents.bat**. The batch will create a file called **FilesToBeReencoded.txt** in the **TXT** folder and then trigger **Torrents.py** to process the file.
+  
+    
+Once set up, qBittorrent will pass the file path and category to **Torrents.bat**. The batch will create a file called **FilesToBeReencoded.txt** in the **TXT** folder and then trigger **Torrents.py** to process the file.
 
 #### **SABnzbd**:
 
@@ -85,20 +86,18 @@ With these steps, your scripts will be properly connected to Sonarr, Radarr, all
 
 You can easily trigger the batch scripts (Movies.bat or TVShows.bat) from the Windows right-click context menu using the **Send To** option. Follow these steps to set it up:
 
-1. **Open the "Send To" Folder**:
-   - Press `Win + R` to open the Run dialog.
-   - Type `shell:SendTo` and press Enter. This will open the folder that contains your "Send To" shortcuts.
-
-2. **Create Shortcuts to the Batch Scripts**:
-   - Inside the "SendTo" folder, create shortcuts to the batch scripts that correspond to the types of media you want to process:
+1. **Create Shortcuts for the Batch Scripts**:
+   - First, create shortcuts for the batch scripts that correspond to the types of media you want to process:
      - **Movies.bat**: For processing movie files.
      - **TVShows.bat**: For processing TV show files.
-   - Right-click on each `.bat` file in your project directory and select **Create Shortcut**. Then, move the shortcut to the **SendTo** folder.
+   - Right-click on the **Movies.bat** file in your project directory and select **Create Shortcut**. Do the same for **TVShows.bat**.
+   - After creating the shortcuts, **rename** the shortcuts to `Movies` and `TVShows` to match the category names expected by the script.
+   - Move the renamed shortcuts to the **SendTo** folder. You can find the **SendTo** folder by pressing `Win + R` to open the Run dialog, then typing `shell:SendTo` and pressing Enter. This will open the folder containing the "Send To" shortcuts.
 
-3. **Using the Right-Click "Send To" Menu**:
+2. **Using the Right-Click "Send To" Menu**:
    - After completing the setup, you can right-click on any video file (either a movie or a TV show) in Windows Explorer.
    - Choose **Send To**, then select either **Movies** or **TVShows** to trigger the corresponding script.
-   - The selected script will then run, reencoding the file and placing it in the designated output directory (ReEncodedFiles).
+   - The selected script will then run, reencoding the file and placing it in the designated output directory (**ReEncodedFiles**).
 
 ### Folder Structure
 
