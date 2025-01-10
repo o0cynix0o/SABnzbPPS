@@ -58,20 +58,11 @@ With these steps, your scripts will be properly connected to Sonarr, Radarr, all
 
 #### **qBittorrent**:
 
-1. Open **qBittorrent** and go to **Tools > Options**.
-2. Navigate to the **Downloads** section.
-3. Under **Run external program on torrent completion**, enable the option by checking the box.
-4. In the **Run external program** field, input the following command, replacing `"C:\path\to\project\Torrents.bat"` with the actual path where your **Torrents.bat** is located:
-   ```plaintext
-   "C:\path\to\project\Torrents.bat" "%F" "%L"
-   ```
-   - `%F` is the file path.
-   - `%L` is the category (e.g., "Movies" or "TVShow").
-5. Save the changes and restart qBittorrent.
-6. Create categories to match the scripts by doing the following:
+1. **Create categories to match the scripts by doing the following**:
    - Go to **Tools > Options > Downloads**.
-   - Under **Categories**, add categories **Movies** and **TVShows** to correspond with the `Movies.bat` and `TVShows.bat` scripts.
-7. Once set up, qBittorrent will call **Torrents.bat** with the appropriate category when the download completes, passing the category and file path to the corresponding script.
+   - Under **Categories**, add categories **Movies** and **TVShows**. **These precise category names need to be used** as that's what the script is expecting.
+
+2. Once set up, qBittorrent will call **Torrents.bat** with the appropriate category when the download completes, passing the category and file path to the corresponding script. **Torrents.bat** will create a file called **FilesToBeReencoded.txt** in the **TXT** folder and then trigger **Torrents.py** to process the file.
 
 #### **SABnzbd**:
 
@@ -82,7 +73,7 @@ With these steps, your scripts will be properly connected to Sonarr, Radarr, all
      - For **Movies**, set the Post-Processing Script to **Movies.bat**.
      - For **TV Shows**, set the Post-Processing Script to **TVShows.bat**.
 4. When SABnzbd completes a download, it will automatically run the relevant `.bat` file, which triggers the Python scripts to process the downloaded file.
-   - Ensure that the **Movies.bat** and **TVShows.bat** files are correctly pointing to the scripts to process the respective files.
+   - Ensure that the **Movies** and **TVShows** catagories are correctly pointing to the correct .bat files to process the respective media types.
 
 ### Execution
 
@@ -93,11 +84,11 @@ With these steps, your scripts will be properly connected to Sonarr, Radarr, all
       "C:\path\to\project\Torrents.bat" "%F" "%L"
       ```
       Where `%F` is the file path and `%L` is the category of the torrent (e.g., "Movies" or "TVShow").
-   3. The script will automatically detect the category (Movies or TV Shows) and call the appropriate batch file to process the video.
+   3. The script will automatically reencode the media and call the appropriate API to process the video.
 
 * **SABnzbd**:
-   1. Add the **Movies.bat** or **TVShow.bat** script as post-processing triggers in your SABnzbd categories.
-   2. When a file is downloaded, it will trigger the appropriate batch file, reencode the file, and organize it into the designated output directory (**ReEncodedFiles**).
+   1. Add the **Movies.bat** or **TVShows.bat** script as post-processing triggers in your SABnzbd categories.
+   2. When a file is downloaded, it will trigger the appropriate batch file, reencode the file, and organize it into the designated output directory (**ReEncodedFiles**). And then makes the approiate API call for further processing in either Sonarr or Radarr.
 
 ### Setting Up and Manually Processing Files Using Right-Click "Send To" Menu
 
