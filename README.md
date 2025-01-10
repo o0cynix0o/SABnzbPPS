@@ -1,10 +1,10 @@
-# PostProcessing Script for Handbrake Reencodes to x265
+PostProcessing Script for Handbrake Reencodes to x265
 
 A PostProcessing Script written in Python to use HandBrake to reencode videos into x265 format.
 
 ## Description
 
-The aim is to reencode your media into the efficient x265 format, excise certain audio tracks and subtitles, and further save space. This sparked a determined curiosity within me, driving a quest to understand the mechanics behind this endeavor and delve into its inner workings. These scripts are the result of months of work and testing. I hope they help. If you have any sugestions please feel free to let me know.
+The aim is to reencode your media into the efficient x265 format, excise certain audio tracks and subtitles, to save space. These scripts are the result of months of work and testing. I hope they help. If you have any suggestions, please feel free to let me know.
 
 ## Getting Started
 
@@ -13,14 +13,46 @@ The aim is to reencode your media into the efficient x265 format, excise certain
 1. **Download the project as a zip from GitHub**:
    - Go to the [GitHub project page](https://github.com/o0cynix0o/SABnzbPPS).
    - Click on the "Code" button and select **Download ZIP**.
+   
 2. After downloading and extracting the ZIP, locate the **App** folder inside the extracted project files.
+
 3. **Download and place the required executables**:
-   - **HandBrakeCLI.exe**: Download it from [HandBrake CLI Download Page](https://handbrake.fr/downloads2.php).
-   - **FFprobe.exe**: Download it from [FFmpeg Download Page](https://ffmpeg.org/download.html).
+   - **HandBrakeCLI.exe**: Download from the [HandBrake CLI Download Page](https://handbrake.fr/downloads2.php).
+   - **FFprobe.exe**: Download from the [FFmpeg Download Page](https://ffmpeg.org/download.html).
    - Place both executables inside the **App** folder. These executables are required for the script to function.
+
 4. You don't need to install HandBrake for Windows, but you may choose to install it if you want to adjust or view preset settings using the HandBrake GUI. You can download it from the [HandBrake for Windows page](https://handbrake.fr/downloads.php).
+
 5. The **Presets** folder inside the project includes the required HandBrake presets for processing video files. You can modify these presets if needed by importing them into HandBrake's GUI application.
+
 6. The **ReEncodedFiles** directory is included in the zip and is set as the default output directory for processed files. This output directory will be used automatically for storing reencoded media files.
+
+### Setting up scripts for action
+
+The scripts require API keys to interact with their respective services Sonarr, Radarr, torrent client of choice. Here’s how you can find and set the API keys in the corresponding Python scripts:
+
+1. **Find Your API Key**:
+   - **Sonarr**:
+     1. Go to your Sonarr instance, usually located at `http://localhost:8989` (or the address and port you configured).
+     2. In Sonarr, navigate to **Settings > General > Security**.
+     3. Find your **API Key** under the **Security** section.
+
+   - **Radarr**:
+     1. Go to your Radarr instance, usually located at `http://localhost:7878` (or the address and port you configured).
+     2. In Radarr, navigate to **Settings > General > Security**.
+     3. Find your **API Key** under the **Security** section.
+
+2. **Set Your API Key in the Python Scripts**:
+   - Open the relevant Python script (`Movies.py` for Radarr, `TVShows.py` for Sonarr, or `Torrents.py` for your torrent client).
+   - Find the following lines in each script:
+     ```python
+     sonarr_api_key = "YOUR_SONARR_API_KEY"
+     radarr_api_key = "YOUR_RADARR_API_KEY"
+     ```
+   - Replace `"YOUR_SONARR_API_KEY"` with the API key you found for Sonarr, in scripts TVShows.py and Torrnets.py. and replace `"YOUR_RADARR_API_KEY"` with the API key you found for Radarr in scripts Movies.py, and Torrnets.py.
+   - Save the changes to each script.
+
+With these steps, your scripts will be properly connected to Sonarr, Radarr, allowing for seamless post-processing of movies, TV shows, and torrents.
 
 ### Creating Categories for Downloaders
 
@@ -38,7 +70,7 @@ The aim is to reencode your media into the efficient x265 format, excise certain
 5. Save the changes and restart qBittorrent.
 6. Create categories to match the scripts by doing the following:
    - Go to **Tools > Options > Downloads**.
-   - Under **Categories**, add categories like **Movies** and **TVShow** to correspond with the `Movies.bat` and `TVShows.bat` scripts.
+   - Under **Categories**, add categories **Movies** and **TVShows** to correspond with the `Movies.bat` and `TVShows.bat` scripts.
 7. Once set up, qBittorrent will call **Torrents.bat** with the appropriate category when the download completes, passing the category and file path to the corresponding script.
 
 #### **SABnzbd**:
@@ -67,6 +99,25 @@ The aim is to reencode your media into the efficient x265 format, excise certain
    1. Add the **Movies.bat** or **TVShow.bat** script as post-processing triggers in your SABnzbd categories.
    2. When a file is downloaded, it will trigger the appropriate batch file, reencode the file, and organize it into the designated output directory (**ReEncodedFiles**).
 
+### Setting Up and Manually Processing Files Using Right-Click "Send To" Menu
+
+You can easily trigger the batch scripts (Movies.bat or TVShows.bat) from the Windows right-click context menu using the **Send To** option. Follow these steps to set it up:
+
+1. **Open the "Send To" Folder**:
+   - Press `Win + R` to open the Run dialog.
+   - Type `shell:SendTo` and press Enter. This will open the folder that contains your "Send To" shortcuts.
+
+2. **Create Shortcuts to the Batch Scripts**:
+   - Inside the "SendTo" folder, create shortcuts to the batch scripts that correspond to the types of media you want to process:
+     - **Movies.bat**: For processing movie files.
+     - **TVShows.bat**: For processing TV show files.
+   - Right-click on each `.bat` file in your project directory and select **Create Shortcut**. Then, move the shortcut to the **SendTo** folder.
+
+3. **Using the Right-Click "Send To" Menu**:
+   - After completing the setup, you can right-click on any video file (either a movie or a TV show) in Windows Explorer.
+   - Choose **Send To**, then select either **Movies** or **TVShows** to trigger the corresponding script.
+   - The selected script will then run, reencoding the file and placing it in the designated output directory (ReEncodedFiles).
+
 ### Folder Structure
 
 The folder structure is maintained automatically when you download the project as a ZIP from GitHub. Here's what it will look like after extraction (Not including the .exe files):
@@ -93,29 +144,5 @@ Project Directory (SABnzbPPS)
 └── Torrents.py                 (Main Python Torrent processing script)
 ```
 
-
-## Notes
-
-Simply extract the project ZIP, download the required executables, and place them in the **App** folder. No additional setup is required for the folder structure. To reencode a single file, simply drag and drop the file onto the corresponding `.bat` file.
-
-## Help
-
-Google is your friend.
-
-## Authors
-
-* o0cYN1X0o - Padawan
-* GoyerGeek - Jedi Master
-* ChatGPT - Confused, "Go home you're drunk."
-
-## Version History
-
-Nothin' to see here...move along....
-
-## License
-
-This project is licensed under GNU General Public License v3.0 - see the LICENSE.md file for details
-
-## Acknowledgments
-
-*Terry Hoitz - "Fly peacock, fly!"
+This structure allows for efficient sorting, encoding, and organizing of downloaded content.
+```
