@@ -15,10 +15,12 @@ During a mundane commute to work, an intriguing notion dawned on me: could ChatG
    - Click on the "Code" button and select **Download ZIP**.
 2. After downloading and extracting the ZIP, locate the **App** folder inside the extracted project files.
 3. **Download and place the required executables**:
-   - **HandBrakeCLI.exe** and **FFprobe.exe** must be placed inside the **App** folder. These executables are required for the script to function.
-   - You don't need to install HandBrake for Windows, but you may choose to install it if you want to adjust or view preset settings using the HandBrake GUI.
-4. The **Presets** folder inside the project includes the required HandBrake presets for processing video files. You can modify these presets if needed by importing them into HandBrake's GUI application.
-5. The **ReEncodedFiles** directory is included in the zip and is set as the default output directory for processed files. This output directory will be used automatically for storing reencoded media files.
+   - **HandBrakeCLI.exe**: Download it from [HandBrake CLI Download Page](https://handbrake.fr/downloads2.php).
+   - **FFprobe.exe**: Download it from [FFmpeg Download Page](https://ffmpeg.org/download.html).
+   - Place both executables inside the **App** folder. These executables are required for the script to function.
+4. You don't need to install HandBrake for Windows, but you may choose to install it if you want to adjust or view preset settings using the HandBrake GUI. You can download it from the [HandBrake for Windows page](https://handbrake.fr/downloads.php).
+5. The **Presets** folder inside the project includes the required HandBrake presets for processing video files. You can modify these presets if needed by importing them into HandBrake's GUI application.
+6. The **ReEncodedFiles** directory is included in the zip and is set as the default output directory for processed files. This output directory will be used automatically for storing reencoded media files.
 
 ### Creating Categories for Downloaders
 
