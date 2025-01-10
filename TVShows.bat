@@ -33,5 +33,5 @@ goto next
 
 :done
 REM Call the Python script using the dynamic directory path
-python %ScriptDir%Shows.py
+python %ScriptDir%TVShows.py
 exit
