@@ -20,7 +20,7 @@ handbrake_path = os.path.join(script_directory, "App/HandBrakeCLI.exe")
 
 # Retrieve Sonarr API key and URL from environment variables for security
 sonarr_api_key = os.getenv("SONARR_API_KEY", "default_api_key")
-sonarr_url = os.getenv("SONARR_URL", "http://localhost:55003/api/v3/command")
+sonarr_url = os.getenv("SONARR_URL", "http://localhost:port####/api/v3/command")
 
 # Directory where re-encoded files will be stored
 re_encoded_directory = os.path.join(script_directory, "ReEncodedFiles")
