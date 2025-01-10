@@ -1,4 +1,4 @@
-PostProcessing Script for Handbrake Reencodes to x265
+# PostProcessing Script for Handbrake Reencodes to x265
 
 A PostProcessing Script written in Python to use HandBrake to reencode videos into x265 format.
 
