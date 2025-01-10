@@ -33,17 +33,17 @@ def process_media_info(file_path, codec, width, script_directory, category):
     subprocess.run(arguments, check=True)
 
     # API call based on category (Sonarr or Radarr)
-    if category == "Shows":
+    if category == "TVShows":
         # Placeholder API key for Sonarr (replace with actual API key)
         sonarr_api_key = "your_sonarr_api_key_here"
-        sonarr_url = "http://localhost:55003/api/v3/command"
+        sonarr_url = "http://localhost:port#/api/v3/command"
         json_payload = {"name": "downloadedepisodesscan", "path": output_file_path}
         api_url = sonarr_url
         api_key = sonarr_api_key
     elif category == "Movies":
         # Placeholder API key for Radarr (replace with actual API key)
         radarr_api_key = "your_radarr_api_key_here"
-        radarr_url = "http://localhost:55004/api/v3/command"
+        radarr_url = "http://localhost:port#/api/v3/command"
         json_payload = {"name": "downloadedmoviesscan", "path": output_file_path}
         api_url = radarr_url
         api_key = radarr_api_key
