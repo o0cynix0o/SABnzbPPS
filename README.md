@@ -19,7 +19,7 @@ The aim is to reencode your media into the efficient x265 format, excise certain
 3. **Download and place the required executables**:
    - **HandBrakeCLI.exe**: Download from the [HandBrake CLI Download Page](https://handbrake.fr/downloads2.php).
    - **FFprobe.exe**: Download from the [FFmpeg Download Page](https://ffmpeg.org/download.html).
-   - Place both executables inside the **/SABnzbPPS/App** folder.
+   - Place both executables inside the **App** folder.
 
 4. You don't need to install HandBrake for Windows, but you may choose to install it if you want to adjust or view preset settings using the HandBrake GUI. You can download it from the [HandBrake for Windows page](https://handbrake.fr/downloads.php).
 
