@@ -36,7 +36,7 @@ Go to the [GitHub Wiki page](https://github.com/o0cynix0o/SABnzbPPS/wiki) for in
 
 ## Notes
 
-Simply extract the project ZIP, download the required executables, and place them in the **App** folder. No additional setup is required for the folder structure. To reencode a single file, simply drag and drop the file onto the corresponding `.bat` file.
+Simply extract the latest release, no additional setup is required for the folder structure. To reencode a single file, simply drag and drop the file onto the corresponding `.bat` file.
 
 ## Help
 
