@@ -26,11 +26,10 @@ This project is a PostProcessing Script written in Python designed to reencode y
 5. **API Calls for Further Processing**:
    - After the reencoding is complete, an API call is made depending on the script used:
      - For **NZB** downloads (handled by **Movies.py** and **TVShows.py**), the corresponding service (**Radarr** for movies or **Sonarr** for TV shows) receives the API call to process the reencoded file.
-     - For **torrents** (handled by **Torrents.py**), the service is determined by the category passed to the **Torrents.bat** file.
+     - For **Torrents** (handled by **Torrents.py**), the service is determined by the category passed to the **Torrents.bat** file.
    - The respective service processes the request, and the reencoded file is moved or removed from the **ReEncodedFiles** directory accordingly.
 
 This workflow ensures a smooth and automated reencoding and management process for your media files, maximizing storage efficiency and compatibility with various playback devices.
-
 
 Go to the [GitHub Wiki page](https://github.com/o0cynix0o/SABnzbPPS/wiki) for install and setup instructions.
 
@@ -58,4 +57,4 @@ This project is licensed under GNU General Public License v3.0 - see the LICENSE
 
 ## Acknowledgments
 
-*Terry Hoitz - "Fly peacock, fly!"
+*Terry Hoitz - "I am a peacock,you gotta let me fly!"
