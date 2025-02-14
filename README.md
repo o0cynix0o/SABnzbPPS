@@ -32,7 +32,7 @@ This project is a PostProcessing Script written in Python designed to reencode y
 This workflow ensures a smooth and automated reencoding and management process for your media files, maximizing storage efficiency and compatibility with various playback devices.
 
 
-Go to the [GitHub Wiki page]([https://github.com/o0cynix0o/SABnzbPPS](https://github.com/o0cynix0o/SABnzbPPS/wiki)) for install and setup instructions.
+Go to the [GitHub Wiki page](https://github.com/o0cynix0o/SABnzbPPS/wiki) for install and setup instructions.
 ## Getting Started
 
 ## Notes
