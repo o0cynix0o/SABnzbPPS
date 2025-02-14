@@ -33,7 +33,6 @@ This workflow ensures a smooth and automated reencoding and management process f
 
 
 Go to the [GitHub Wiki page](https://github.com/o0cynix0o/SABnzbPPS/wiki) for install and setup instructions.
-## Getting Started
 
 ## Notes
 
