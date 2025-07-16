@@ -49,7 +49,8 @@ Google is your friend.
 
 - **o0cYN1X0o** - Padawan  
 - **GoyerGeek** - Jedi Master  
-- **ChatGPT** - Confused, "Go home you're drunk."  
+- **ChatGPT** - Confused, "Go home you're drunk."
+- **Claude** - An amazing tool. 
 
 ## Version History  
 
