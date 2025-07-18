@@ -12,8 +12,8 @@ from datetime import datetime
 # ══════════════════════════════════════════════
 
 # Radarr API configuration
-RADARR_API_KEY = "4309795e4f7a4045bd1cf652a17e66bf"
-RADARR_URL = "http://localhost:55004/api/v3/command"
+RADARR_API_KEY = "RADARR_API_KEY"
+RADARR_URL = "RADARR_URL"
 RADARR_DELAY_TIME = 5  # Delay (in seconds) after notifying Radarr
 
 # ══════════════════════════════════════════════
