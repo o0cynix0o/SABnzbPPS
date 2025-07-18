@@ -12,12 +12,12 @@ from datetime import datetime
 # ══════════════════════════════════════════════
 
 # Sonarr API Configuration
-SONARR_API_KEY = "3689d41353b344018cbaa13c9f95c5dc"
-SONARR_URL = "http://localhost:55003/api/v3/command"
+SONARR_API_KEY = "SONARR_API_KEY"
+SONARR_URL = "SONARR_URL"
 
 # Radarr API Configuration
-RADARR_API_KEY = "4309795e4f7a4045bd1cf652a17e66bf"
-RADARR_URL = "http://localhost:55004/api/v3/command"
+RADARR_API_KEY = "RADARR_API_KEY"
+RADARR_URL = "RADARR_URL"
 
 # Processing Configuration
 API_DELAY_TIME = 5  # Delay after notifying API
