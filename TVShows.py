@@ -12,8 +12,8 @@ from datetime import datetime
 # ══════════════════════════════════════════════
 
 # Sonarr API Configuration
-SONARR_API_KEY = "3689d41353b344018cbaa13c9f95c5dc"
-SONARR_URL = "http://localhost:55003/api/v3/command"
+SONARR_API_KEY = "SONARR_API_KEY"
+SONARR_URL = "SONARR_URL"
 SONARR_DELAY_TIME = 5  # Delay after notifying Sonarr
 
 # ══════════════════════════════════════════════
