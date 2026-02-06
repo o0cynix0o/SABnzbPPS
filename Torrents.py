@@ -1,6 +1,5 @@
 import os
 import subprocess
-import json
 import requests
 import time
 import logging
@@ -21,6 +20,7 @@ RADARR_URL = "RADARR_URL"
 
 # Processing Configuration
 API_DELAY_TIME = 5  # Delay after notifying API
+API_TIMEOUT_SECONDS = 30
 
 # ══════════════════════════════════════════════
 # 📁 SECTION 2: Path Setup
@@ -143,12 +143,10 @@ def process_media_info(file_path, codec, width, category):
         logger.warning(f"Video width {width}px does not match preset conditions. Skipping file.")
         return
 
-    # Create output directory for this file
+    # Ensure output directory exists
     file_name = os.path.splitext(os.path.basename(file_path))[0]
-    reencoded_directory = os.path.join(RE_ENCODED_DIRECTORY, file_name)
-    os.makedirs(reencoded_directory, exist_ok=True)
-    
-    output_file_path = os.path.join(reencoded_directory, f"{file_name}_converted.mkv")
+    os.makedirs(RE_ENCODED_DIRECTORY, exist_ok=True)
+    output_file_path = os.path.join(RE_ENCODED_DIRECTORY, f"{file_name}_converted.mkv")
     preset_file_full_path = os.path.join(SCRIPT_DIRECTORY, preset["preset_file"])
 
     arguments = [
@@ -196,13 +194,13 @@ def process_media_info(file_path, codec, width, category):
         logger.error(f"HandBrakeCLI failed for {file_path}: {e}")
         return
 
-    notify_api(output_file_path, category, reencoded_directory)
+    notify_api(output_file_path, category)
 
 # ══════════════════════════════════════════════
 # 📡 SECTION 8: Notify API
 # ══════════════════════════════════════════════
 
-def notify_api(output_file_path, category, reencoded_directory):
+def notify_api(output_file_path, category):
     """
     Sends appropriate API request based on category (Shows/Movies).
     """
@@ -217,10 +215,15 @@ def notify_api(output_file_path, category, reencoded_directory):
         response = requests.post(
             api_config["url"],
             headers={"X-Api-Key": api_config["api_key"]},
-            json=json_payload
+            json=json_payload,
+            timeout=API_TIMEOUT_SECONDS
         )
         response.raise_for_status()
-        logger.info(f"{category} API Response: {response.json()}")
+        try:
+            response_data = response.json()
+        except ValueError:
+            response_data = response.text
+        logger.info(f"{category} API Response: {response_data}")
     except requests.RequestException as e:
         logger.error(f"Failed to contact {category} API: {e}")
         return
@@ -229,10 +232,6 @@ def notify_api(output_file_path, category, reencoded_directory):
 
     if not os.path.exists(output_file_path):
         logger.info(f"File was imported by {category} API: {output_file_path}")
-        # Clean up empty directory if file was imported
-        if not os.listdir(reencoded_directory):
-            os.rmdir(reencoded_directory)
-            logger.info(f"Cleaned up empty directory: {reencoded_directory}")
     else:
         logger.warning(f"File was NOT imported by {category} API: {output_file_path}")
 

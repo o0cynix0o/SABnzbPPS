@@ -15,7 +15,7 @@ set "current=%~1"
 REM Check if the parameter is a directory or file
 if exist "%current%\" (
     REM It's a directory, process all supported video files in the directory recursively
-    for /R "%current%" %%F in (*.mp4 *.mkv *.mpg *.mpeg *.avi *.webm *.divx *.m2ts *.iso *.m4v) do (
+    for /R "%current%" %%F in (*.mp4 *.mkv *.mpg *.mpeg *.avi *.webm *.divx *.m2ts *.iso *.m4v *.ts) do (
         echo "%%F" >> "%ScriptDir%TXT\FilesToBeProcessed_v2.txt"
     )
 ) else (
@@ -29,5 +29,5 @@ goto next
 
 :done
 REM Call the PowerShell script using the dynamic directory path
-python %ScriptDir%Shrink.py
+python "%ScriptDir%Shrink.py"
 exit

@@ -9,8 +9,8 @@ This project is a PostProcessing Script written in Python designed to reencode y
 ### How It Works  
 
 1. **Download Client Integration**:  
-   - When a download completes, the download client (such as qBittorrent or SABnzbd) passes the file category and file path to the appropriate batch file (**Movies.bat**, **TVShows.bat**, or **Torrents.bat**).  
-   - The batch file creates a text file in the **TXT** folder containing the category and file path information and triggers the corresponding Python script (**Movies.py**, **TVShows.py**, or **Torrents.py**).  
+   - When a download completes, the download client (such as qBittorrent or SABnzbd) passes the file path (and category for torrents) to the appropriate batch file (**Movies.bat**, **TVShows.bat**, or **Torrent.bat**).  
+   - The batch file creates a text file in the **TXT** folder and triggers the corresponding Python script (**Movies.py**, **TVShows.py**, or **Torrents.py**).  
 
 2. **File Scanning**:  
    - The Python script scans the file using **FFprobe**, extracting information about the codec and resolution of the video.  
@@ -26,7 +26,7 @@ This project is a PostProcessing Script written in Python designed to reencode y
 5. **API Calls for Further Processing**:  
    - After the reencoding is complete, an API call is made depending on the script used:  
      - For **NZB** downloads (handled by **Movies.py** and **TVShows.py**), the corresponding service (**Radarr** for movies or **Sonarr** for TV shows) receives the API call to process the reencoded file.  
-     - For **Torrents** (handled by **Torrents.py**), the service is determined by the category passed to the **Torrents.bat** file.  
+     - For **Torrents** (handled by **Torrents.py**), the service is determined by the category passed to the **Torrent.bat** file.  
    - The respective service processes the request, and the reencoded file is moved or removed from the **ReEncodedFiles** directory accordingly.  
 
 ### **Manual Reencoding Mode**  
@@ -39,7 +39,7 @@ Go to the [GitHub Wiki page](https://github.com/o0cynix0o/SABnzbPPS/wiki) for in
 
 ## Notes  
 
-Simply extract the latest release, no additional setup is required for the folder structure. To reencode a single file, simply drag and drop the file onto the corresponding `.bat` file.  
+This package is Windows-only. Simply extract the latest release and run; `HandBrakeCLI.exe` and `ffprobe.exe` are included in the **App** folder. To reencode a single file, drag and drop the file onto the corresponding `.bat` file.  
 
 ## Help  
 
@@ -58,7 +58,7 @@ Nothin' to see here... move along....
 
 ## License  
 
-This project is licensed under GNU General Public License v3.0 - see the LICENSE.md file for details.  
+This project is licensed under GNU General Public License v3.0 - see the LICENSE file for details.  
 
 ## Acknowledgments  
 

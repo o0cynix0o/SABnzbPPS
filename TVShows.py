@@ -1,6 +1,5 @@
 import os
 import subprocess
-import json
 import requests
 import time
 import logging
@@ -15,6 +14,7 @@ from datetime import datetime
 SONARR_API_KEY = "SONARR_API_KEY"
 SONARR_URL = "SONARR_URL"
 SONARR_DELAY_TIME = 5  # Delay after notifying Sonarr
+API_TIMEOUT_SECONDS = 30
 
 # ══════════════════════════════════════════════
 # 📁 SECTION 2: Path Setup
@@ -182,9 +182,18 @@ def notify_sonarr(output_file_path):
     """
     json_payload = {"name": "downloadedepisodesscan", "path": output_file_path}
     try:
-        response = requests.post(SONARR_URL, headers={"X-Api-Key": SONARR_API_KEY}, json=json_payload)
+        response = requests.post(
+            SONARR_URL,
+            headers={"X-Api-Key": SONARR_API_KEY},
+            json=json_payload,
+            timeout=API_TIMEOUT_SECONDS
+        )
         response.raise_for_status()
-        logger.info(f"Sonarr Response: {response.json()}")
+        try:
+            response_data = response.json()
+        except ValueError:
+            response_data = response.text
+        logger.info(f"Sonarr Response: {response_data}")
     except requests.RequestException as e:
         logger.error(f"Failed to contact Sonarr: {e}")
         return

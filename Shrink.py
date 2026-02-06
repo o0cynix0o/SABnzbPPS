@@ -5,13 +5,6 @@ import sys
 from datetime import datetime
 
 # ══════════════════════════════════════════════
-# 🔐 SECTION 1: Configuration and Constants
-# ══════════════════════════════════════════════
-
-# Processing Configuration
-PROCESSING_DELAY_TIME = 2  # Delay between file processing
-
-# ══════════════════════════════════════════════
 # 📁 SECTION 2: Path Setup
 # ══════════════════════════════════════════════
 
@@ -115,12 +108,10 @@ def process_media_info(file_path, codec, width):
         logger.warning(f"Video width {width}px does not match preset conditions. Skipping file.")
         return
 
-    # Create output directory for this file
+    # Ensure output directory exists
     file_name = os.path.splitext(os.path.basename(file_path))[0]
-    reencoded_directory = os.path.join(RE_ENCODED_DIRECTORY, file_name)
-    os.makedirs(reencoded_directory, exist_ok=True)
-    
-    output_file_path = os.path.join(reencoded_directory, f"{file_name}_converted.mkv")
+    os.makedirs(RE_ENCODED_DIRECTORY, exist_ok=True)
+    output_file_path = os.path.join(RE_ENCODED_DIRECTORY, f"{file_name}_converted.mkv")
     preset_file_full_path = os.path.join(SCRIPT_DIRECTORY, preset["preset_file"])
 
     arguments = [

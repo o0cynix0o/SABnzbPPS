@@ -11,15 +11,14 @@ set "ScriptDir=%~dp0"
 REM Create or clear the text file where video file paths will be stored
 type nul > "%ScriptDir%TXT\ShowsToBeProcessed.txt"
 
-REM Loop through each argument passed to the batch file
-:next
+REM Expect: %1 = final directory or file path (from SABnzbd)
 if "%~1"=="" goto done
 set "current=%~1"
 
 REM Check if the parameter is a directory or a file
 if exist "%current%\" (
     REM If it's a directory, process all supported video files recursively
-    for /R "%current%" %%F in (*.mp4 *.mkv *.mpg *.mpeg *.avi *.webm *.divx *.m2ts *.iso *.m4v) do (
+    for /R "%current%" %%F in (*.mp4 *.mkv *.mpg *.mpeg *.avi *.webm *.divx *.m2ts *.iso *.m4v *.ts) do (
         echo "%%F" >> "%ScriptDir%TXT\ShowsToBeProcessed.txt"
     )
 ) else (
@@ -27,11 +26,7 @@ if exist "%current%\" (
     echo "%current%" >> "%ScriptDir%TXT\ShowsToBeProcessed.txt"
 )
 
-REM Shift to the next argument
-shift
-goto next
-
 :done
 REM Call the Python script using the dynamic directory path
-python %ScriptDir%TVShows.py
+python "%ScriptDir%TVShows.py"
 exit
