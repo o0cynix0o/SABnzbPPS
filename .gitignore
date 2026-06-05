@@ -1,0 +1,15 @@
+# ── User-supplied binaries ──────────────────────────────
+# Users provide their own HandBrakeCLI / ffmpeg / ffprobe
+# (see the placeholder note inside App/). Too large for GitHub.
+/App/*.exe
+
+# ── Encoded output ──────────────────────────────────────
+# Re-encoded video lands here; never commit it.
+/ReEncodedFiles/*
+!/ReEncodedFiles/*.txt
+
+# ── Run logs ────────────────────────────────────────────
+/Log/*.txt
+
+# ── Scratch work lists (regenerated on every run) ───────
+/TXT/*.txt
